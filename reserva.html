@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Reservar Transporte</title>
+    <link rel="stylesheet" href="css/styles_viajero.css">
+      <link rel="icon" href="imagenes/icono.png" type="image/png">
+    <script src="js/reservar.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>Reservar Transporte</h1>
+        <nav>
+            <a href="viajero.html">Inicio</a>
+        </nav>
+    </header>
+
+    <main class="form-container">
+        <form id="reservaForm" class="card-form">
+            <label for="dia">Día</label>
+            <input type="date" id="dia" required>
+
+            <label for="hora">Hora</label>
+            <input type="time" id="hora" required>
+
+            <label for="direccion">Dirección</label>
+            <input type="text" id="direccion" placeholder="Ej. Av. Larco 123" required>
+
+            <button type="button" id="calcularPrecio">Calcular Precio</button>
+        </form>
+
+        <p id="precio"></p>
+
+        <div id="pagoSection" style="display:none;" class="card-form">
+            <label for="formaPago">Forma de pago</label>
+            <select id="formaPago">
+                <option value="">Seleccione</option>
+                <option value="efectivo">Efectivo</option>
+                <option value="tarjeta">Tarjeta</option>
+            </select>
+
+            <div id="mensajeEfectivo" style="display:none;">
+                <p>El pago se realizará al llegar el transporte.</p>
+                <button id="confirmarEfectivo">Confirmar Reserva</button>
+            </div>
+
+            <div id="formTarjeta" style="display:none;">
+                <label>Número de Tarjeta</label>
+                <input type="text" maxlength="16" placeholder="XXXX XXXX XXXX XXXX">
+
+                <label>Fecha de Vencimiento</label>
+                <input type="month">
+
+                <label>Código CVV</label>
+                <input type="text" maxlength="3">
+
+                <label>Correo</label>
+                <input type="email">
+
+                <label>Nombre Completo</label>
+                <input type="text">
+
+                <button id="confirmarTarjeta">Confirmar Pago</button>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

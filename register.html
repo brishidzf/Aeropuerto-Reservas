@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Registro</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="icon" href="imagenes/icono.png" type="image/png">
+</head>
+<body>
+  <div class="container">
+    <img src="imagenes/icono.png" alt="Icono Aeropuerto" class="icono">
+    <h2>Registro de Viajero</h2>
+    <form id="registerForm">
+      <input type="email" id="correo" placeholder="Correo electrónico" required>
+      <input type="text" id="dni" placeholder="DNI" required>
+      <input type="password" id="newPassword" placeholder="Contraseña" required>
+      <p id="generatedUser"></p>
+      <button type="submit" class="btn">Registrarse</button>
+    </form>
+    <a href="index.html">Volver</a>
+  </div>
+  <script src="js/register.js"></script>
+</body>
+</html>

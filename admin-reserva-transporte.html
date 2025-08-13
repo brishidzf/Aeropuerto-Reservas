@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Reserva Transporte - Admin</title>
+  <link rel="stylesheet" href="css/styles_admin.css" />
+  <link rel="icon" href="imagenes/icono.png" type="image/png" />
+  <script src="js/cerrar_sesion.js" defer></script>
+  <script src="js/admin_reserva.js" defer></script>
+</head>
+<body>
+  <header>
+    <h1>Reserva de Transporte (Admin)</h1>
+    <nav>
+      <a href="admin.html">Inicio</a>
+      <a href="admin-info-aeropuerto.html">Info del Aeropuerto</a>
+      <a href="admin-gestion-usuarios.html">Gestión de Usuarios</a>
+      <button id="cerrarSesion">Cerrar Sesión</button>
+    </nav>
+  </header>
+
+  <main>
+    <div class="form-container">
+      <form class="card-form" id="reservaForm">
+        <h3>Crear Reserva</h3>
+        <label for="fecha">Día</label>
+        <input type="date" id="fecha" required />
+
+        <label for="hora">Hora</label>
+        <input type="time" id="hora" required />
+
+        <label for="direccion">Dirección de recojo</label>
+        <input type="text" id="direccion" placeholder="Ej: Av. La Marina 123, San Miguel" required />
+
+        <label for="usuarioId">Usuario (ID)</label>
+        <input type="text" id="usuarioId" placeholder="Ej: VJ74220494" required />
+
+        <button type="button" onclick="calcularPrecio()">Calcular Precio</button>
+        <p id="precioTexto"></p>
+      </form>
+    </div>
+
+    <div class="form-container" id="pagoContainer" style="display:none;">
+      <form class="card-form" id="pagoForm">
+        <h3>Pago</h3>
+        <label for="metodoPago">Método</label>
+        <select id="metodoPago" required>
+          <option value="">Seleccione</option>
+          <option value="efectivo">Efectivo</option>
+          <option value="tarjeta">Tarjeta</option>
+        </select>
+
+        <div id="infoEfectivo" style="display:none; font-size: 0.95rem;">
+          <p>Al elegir <b>efectivo</b>, el pasajero paga al conductor al abordar.</p>
+        </div>
+
+        <div id="formTarjeta" style="display:none;">
+          <label>Número de Tarjeta</label>
+          <input type="text" placeholder="0000 0000 0000 0000" />
+
+          <label>Fecha de Vencimiento</label>
+          <input type="text" placeholder="MM/AA" />
+
+          <label>CVV</label>
+          <input type="text" placeholder="XXX" />
+
+          <label>Correo</label>
+          <input type="email" placeholder="correo@ejemplo.com" />
+
+          <label>Nombre Completo</label>
+          <input type="text" placeholder="Nombre y Apellido" />
+        </div>
+
+        <button type="button" onclick="confirmarPago()">Confirmar</button>
+        <p id="resultadoPago"></p>
+      </form>
+    </div>
+  </main>
+</body>
+</html>

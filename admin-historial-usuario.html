@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Historial del Usuario</title>
+  <link rel="stylesheet" href="css/styles_admin.css" />
+  <link rel="icon" href="imagenes/icono.png" type="image/png" />
+  <script src="js/cerrar_sesion.js" defer></script>
+  <script src="js/admin_historial.js" defer></script>
+</head>
+<body>
+  <header>
+    <h1>Historial de Reservas</h1>
+    <nav>
+      <a href="admin.html">Inicio</a>
+      <a href="admin-info-aeropuerto.html">Info del Aeropuerto</a>
+      <a href="admin-reserva-transporte.html">Reservar Transporte</a>
+      <a href="admin-gestion-usuarios.html">Gestión de Usuarios</a>
+      <button id="cerrarSesion">Cerrar Sesión</button>
+    </nav>
+  </header>
+
+  <main>
+    <div class="card">
+      <h2 id="tituloUsuario">Reservas del Usuario</h2>
+      <table id="tablaHistorial">
+        <thead>
+          <tr>
+            <th>Origen</th>
+            <th>Fecha</th>
+            <th>Hora</th>
+            <th>Monto (S/)</th>
+            <th>Pago</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Se llena por JS -->
+        </tbody>
+      </table>
+    </div>
+  </main>
+</body>
+</html>
